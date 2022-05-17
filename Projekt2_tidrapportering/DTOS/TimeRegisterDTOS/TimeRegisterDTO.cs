@@ -10,6 +10,6 @@ namespace Projekt2_tidrapportering.DTOS.TimeRegisterDTOS
         public int AmountMinutes { get; set; }
         public string Description { get; set; }
         public ProjectDTO Project { get; set; } = new ProjectDTO();
-        public CustomerDTO Customer { get; set; } = new CustomerDTO();
+        //public CustomerDTO Customer { get; set; } = new CustomerDTO();
     }
 }

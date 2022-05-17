@@ -27,11 +27,6 @@ namespace Projekt2_tidrapportering.Controllers
                 Date = t.Date,
                 Description = t.Description,
                 AmountMinutes = t.AmountMinutes,
-                Customer = new CustomerDTO()
-                {
-                    Id = t.Customer.Id,
-                    Name = t.Customer.Name
-                },
                 Project = new ProjectDTO()
                 {
                     Id = t.Project.Id,
@@ -62,11 +57,6 @@ namespace Projekt2_tidrapportering.Controllers
                 Date = timeregister.Date,
                 Description = timeregister.Description,
                 AmountMinutes = timeregister.AmountMinutes,
-                Customer = new CustomerDTO()
-                {
-                    Id = timeregister.Customer.Id,
-                    Name = timeregister.Customer.Name,
-                },
                 Project = new ProjectDTO()
                 {
                     Id = timeregister.Project.Id,
@@ -102,11 +92,6 @@ namespace Projekt2_tidrapportering.Controllers
                 AmountMinutes = timeregister.AmountMinutes,
                 Date = timeregister.Date,
                 Description = timeregister.Description,
-                Customer = new CustomerDTO()
-                {
-                    Id = cust.Id,
-                    Name = cust.Name
-                },
                 Project = new ProjectDTO()
                 {
                     Id = proj.Id,

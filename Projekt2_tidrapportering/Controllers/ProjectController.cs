@@ -17,6 +17,7 @@ namespace Projekt2_tidrapportering.Controllers
         [HttpGet]
         public IActionResult GetProjects()
         {
+            
             return Ok(_context.Projects.Select(p => new ProjectsDTO()
             {
                 Id = p.Id,
