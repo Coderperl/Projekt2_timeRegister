@@ -75,7 +75,9 @@ namespace Projekt2_tidrapportering.Controllers
         public IActionResult CreateTimeRegister(CreateTimeRegisterDTO createdDTO)
         {
             var cust = _context.Customers.Find(createdDTO.CustomerId);
+            if (cust == null) return NotFound("CustomerId was not found");
             var proj = _context.Projects.Find(createdDTO.ProjectId);
+            if (proj == null) return NotFound("ProjectId was not found.");
             var timeregister = new TimeRegister()
             {
                 Date = createdDTO.Date,

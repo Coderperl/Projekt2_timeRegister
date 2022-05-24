@@ -1,0 +1,28 @@
+﻿@model Customer_Project_Administration_Application.ViewModels.CustomerFolder.CustomersViewModel
+
+
+@{
+    ViewData["Title"] = "All Customers";
+}
+
+<h1>Alla spelare </h1>
+<table class="table">
+<tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Edit</th>
+    <th>Delete</th>
+</tr>
+
+    @foreach (var cust in Model.Customers)
+    {
+        <tr>
+            <td>@cust.Id</td>
+            <td>@cust.Name</td>
+            <td><i class='bx bxs-edit-alt' text-primary><a asp-controller="Customer" asp-action="Edit" asp-route-id="@cust.Id"></a></i></td>
+            <td><i class='bx bxs-message-square-x text-danger'><a  asp-controller="Customer" asp-action="Delete" asp-route-id="@cust.Id"></a></i></td>
+        </tr>
+    }
+</table>
+<a class="btn btn-primary" asp-controller="Customer" asp-action="New">Add Customer</a>
+

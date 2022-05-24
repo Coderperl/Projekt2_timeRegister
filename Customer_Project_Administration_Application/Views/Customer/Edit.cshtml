@@ -1,0 +1,22 @@
+﻿@model Customer_Project_Administration_Application.ViewModels.CustomerFolder.EditCustomerViewModel
+
+@{
+    ViewData["Title"] = "Edit player";
+}
+<div class="card">
+    <div class="card-header">
+        <h1>Edit Customer</h1>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Name">Name</label>
+                <input class="form-control" asp-for="Name" />  
+                <span asp-validation-for="Name" class="field-validation-error"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+
+        </form>
+
+    </div>
+</div>
