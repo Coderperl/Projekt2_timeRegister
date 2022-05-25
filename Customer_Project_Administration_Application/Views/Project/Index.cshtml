@@ -21,12 +21,16 @@
             <td>@project.Customer.Name</td>
             <td>@project.Id</td>
             <td>@project.Name</td>
-            <td><i class='bx bxs-edit-alt text-primary'><a asp-controller="Project" asp-action="Edit" asp-route-id="@project.Id"></a></i></td>
-            <td><i class='bx bxs-message-square-x text-danger'><a asp-controller="Project" asp-action="Delete" asp-route-id="@project.Id"></a></i></td>
+            <td><a asp-controller="Project" asp-action="Edit" asp-route-id="@project.Id"><i class='bx bxs-edit-alt text-primary'></i></a></td>
+            <td>
+                <form method="post" >
+                    <button class="border-0 bg-transparent" asp-controller="Project" asp-action="Delete" asp-route-id="@project.Id" type="submit"> <i class='bx bxs-message-square-x text-danger'></i></button>
+                </form>
+            </td>
         </tr>
     }
 </table>
-<a class="btn btn-primary" asp-controller="Project" asp-action="New">
+<a class="btn btn-primary" asp-controller="Project" asp-action="Create">
     Add Project
 </a>
 

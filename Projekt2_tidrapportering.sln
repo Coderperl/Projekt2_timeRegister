@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Projekt2_tidrapportering", "Projekt2_tidrapportering\Projekt2_tidrapportering.csproj", "{98A67B5B-3102-4D95-B79C-EBF4C75DD171}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer_Project_Administration_Application", "..\Customer_Project_Administration_Application\Customer_Project_Administration_Application\Customer_Project_Administration_Application.csproj", "{719C19CD-697C-44C7-B02E-4208D889865E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer_Project_Administration_Application", "Customer_Project_Administration_Application\Customer_Project_Administration_Application.csproj", "{719C19CD-697C-44C7-B02E-4208D889865E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

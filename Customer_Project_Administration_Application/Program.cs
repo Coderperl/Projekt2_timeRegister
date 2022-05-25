@@ -10,16 +10,24 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
 builder.Services.AddTransient<ICustomerService, CustomerService>();
 builder.Services.AddTransient<IProjectService, ProjectService>();
 builder.Services.Configure<ProjectSettings>(builder.Configuration.GetSection("Projects"));
 builder.Services.Configure<CustomerSettings>(builder.Configuration.GetSection("Customers"));
+builder.Services.AddTransient<DataInitializer>();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    scope.ServiceProvider.GetService<DataInitializer>().SeedData();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
